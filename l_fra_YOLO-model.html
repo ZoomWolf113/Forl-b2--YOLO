@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Værktøjets placering</title>
+        <link rel="stylesheet" href="Stylesheet_til_output_fra_YOLO-model.css">
+        <link rel="src" href="Javadokument_til_output_fra_YOLO_model.js">
+    </head>
+    <body>
+        <h1 style="font-size: 100px">Værktøjets placering</h1>
+        <h2 style="font-size: 50px">Registreret værktøj:</h2>
+        <output id="OUT1" type="text">
+        </output>
+
+        <input id="IN1" type="text">
+        </input>
+         <button id="BUT1" onclick="afkrysning()">
+            Send
+         </button>
+         <p>
+            Placeringen skal være
+         </p>
+           
+         <canvas id="C0" width="500px" height="500px" style="border: 2px solid black">
+         </canvas>
+        
+        <script>
+
+            function afkrysning() {
+                let t = document.getElementById("IN1").value;
+                let x, y;
+                let ctx;
+                if (t=="0") {
+                    ctx = document.getElementById("C0").getContext("2d");
+                    x = 20;
+                    y = 20;
+                }
+                else if (t=="1"){
+                    ctx = document.getElementById("C0").getContext("2d");                   
+                    x = 270;
+                    y = 20;
+                }
+                else if (t=="2"){
+                    ctx = document.getElementById("C0").getContext("2d");
+                    x = 20;
+                    y = 270;
+                }
+                 else {
+                    ctx = document.getElementById("C0").getContext("2d");
+                    x = 270;
+                    y = 270;
+                }
+                ctx.clearRect(20,20,460,460);
+                ctx.fillStyle="green";
+                ctx.fillRect(x,y,210,210);
+                
+            }
+            
+
+        </script>
+    </body>
+</html>
